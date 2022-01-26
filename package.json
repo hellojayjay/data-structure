@@ -1,0 +1,21 @@
+{
+  "name": "data-structure",
+  "version": "0.0.1",
+  "description": "data structure in typescript, with adequate unit test",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/",
+    "test": "jest --watch",
+    "test:cov": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}

@@ -141,4 +141,26 @@ export class LinkedList {
     tailNode.next = newNode;
     return newNode;
   }
+
+  /**
+   * 反转列表
+   *
+   * @memberof LinkedList
+   */
+  reverse() {
+    if (this.head.next) {
+      const first = this.head.next;
+      this.reverseNode(first);
+      first.next = null;
+    }
+  }
+
+  private reverseNode(node: Node) {
+    if (node.next) {
+      this.reverseNode(node.next);
+      node.next.next = node;
+    } else {
+      this.head.next = node;
+    }
+  }
 }

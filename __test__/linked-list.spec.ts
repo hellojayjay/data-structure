@@ -116,4 +116,17 @@ describe('linked-list', () => {
       expect(values).toEqual(expected);
     });
   });
+
+  describe('reverse', () => {
+    it('先追加节点 a,b,c，再翻转，则链表值为 ["c", "b", "a"]', () => {
+      linkedList.append('a');
+      linkedList.append('b');
+      linkedList.append('c');
+      linkedList.reverse();
+
+      const values = getLinkedListValues(linkedList);
+      const expected: string[] = ['c', 'b', 'a'];
+      expect(values).toEqual(expected);
+    });
+  });
 });

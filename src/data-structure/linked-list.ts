@@ -163,4 +163,21 @@ export class LinkedList {
       this.head.next = node;
     }
   }
+
+  /** 快慢指针获取链表中间元素的值 */
+  getMiddle() {
+    if (!this.head.next) {
+      return null;
+    }
+
+    let fast = this.head.next;
+    let slow = this.head.next;
+
+    while (fast?.next && fast.next.next) {
+      fast = fast.next.next;
+      slow = slow.next!;
+    }
+
+    return slow!.element;
+  }
 }

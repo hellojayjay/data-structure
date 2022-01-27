@@ -129,4 +129,29 @@ describe('linked-list', () => {
       expect(values).toEqual(expected);
     });
   });
+
+  describe('getMiddle', () => {
+    it('先追加节点 a,b,c，获取中间值，结果为 b', () => {
+      linkedList.append('a');
+      linkedList.append('b');
+      linkedList.append('c');
+      const middle = linkedList.getMiddle();
+
+      const expected: string = 'b';
+      expect(middle).toEqual(expected);
+    });
+
+    it('先追加节点 a,b,c,d,e,f，获取中间值，结果为 c', () => {
+      linkedList.append('a');
+      linkedList.append('b');
+      linkedList.append('c');
+      linkedList.append('d');
+      linkedList.append('e');
+      linkedList.append('f');
+      const middle = linkedList.getMiddle();
+
+      const expected: string = 'c';
+      expect(middle).toEqual(expected);
+    });
+  });
 });

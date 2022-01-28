@@ -3,6 +3,10 @@ class Node {
 }
 
 export class LinkedList {
+  get headNode() {
+    return this.head;
+  }
+
   private head = new Node('head');
 
   /**
@@ -147,21 +151,16 @@ export class LinkedList {
    *
    * @memberof LinkedList
    */
-  reverse() {
-    if (this.head.next) {
-      const first = this.head.next;
-      this.reverseNode(first);
-      first.next = null;
+  reverse(node: Node) {
+    let prev = null;
+    let curr: Node | null = node;
+    while (curr !== null) {
+      let temp: Node | null = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = temp;
     }
-  }
-
-  private reverseNode(node: Node) {
-    if (node.next) {
-      this.reverseNode(node.next);
-      node.next.next = node;
-    } else {
-      this.head.next = node;
-    }
+    return prev;
   }
 
   /** 快慢指针获取链表中间元素的值 */

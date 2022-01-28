@@ -122,11 +122,11 @@ describe('linked-list', () => {
       linkedList.append('a');
       linkedList.append('b');
       linkedList.append('c');
-      linkedList.reverse();
+      const res = linkedList.reverse(linkedList.headNode);
 
-      const values = getLinkedListValues(linkedList);
-      const expected: string[] = ['c', 'b', 'a'];
-      expect(values).toEqual(expected);
+      expect(res?.element).toBe('c');
+      expect(res?.next?.element).toBe('b');
+      expect(res?.next?.next?.element).toBe('a');
     });
   });
 
